@@ -8,7 +8,8 @@ RSpec.describe Post, type: :model do
     it 'returns the last five comments' do
       post.save!
       post.comments.create([{ text: 'Comment 1' }, { text: 'Comment 2' }, { text: 'Comment 3' }, { text: 'Comment 4' },
-                            { text: 'Comment 5' }, { text: 'Comment 6' }, { text: 'Comment 7' }, { text: 'Comment 8' }, { text: 'Comment 9' }])
+                            { text: 'Comment 5' }, { text: 'Comment 6' }, { text: 'Comment 7' }, { text: 'Comment 8' },
+                            { text: 'Comment 9' }])
       expect(post.last_five_comments).to eq(post.comments.last(5))
     end
   end
