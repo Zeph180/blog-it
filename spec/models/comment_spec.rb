@@ -7,10 +7,10 @@ describe Comment, type: :model do
   describe '#update_comment_count' do
     it 'updates the comments count of the associated post' do
       comment = post.comments.create(text: 'Great post!', author_id: user.id, user_id: user.id)
-      expect {
+      expect do
         comment.update_comment_count
         post.reload
-      }.to change { post.comments_count }.by(1)
+      end.to change { post.comments_count }.by(1)
     end
   end
 
