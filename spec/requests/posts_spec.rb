@@ -27,7 +27,7 @@ RSpec.describe PostsController, type: :controller do
   describe 'GET #show' do
     it 'assigns the post' do
       author = User.create!(name: 'John Doe')
-      post = Post.create!(title: 'First Post', text: 'Lorem ipsum', author: author)
+      post = Post.create!(title: 'First Post', text: 'Lorem ipsum', author:)
 
       get :show, params: { id: post.id }
 
@@ -36,7 +36,7 @@ RSpec.describe PostsController, type: :controller do
 
     it 'renders the show template' do
       author = User.create!(name: 'John Doe')
-      post = Post.create!(title: 'First Post', text: 'Lorem ipsum', author: author)
+      post = Post.create!(title: 'First Post', text: 'Lorem ipsum', author:)
 
       get :show, params: { id: post.id }
 
