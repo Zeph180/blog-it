@@ -1,5 +1,3 @@
-<a name="readme-top">BLOG-IT</a>
-
 <div align="center">
 
   <h3><b>Blog-it</b></h3>
