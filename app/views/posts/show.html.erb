@@ -1,4 +1,18 @@
-<h1>Post Details</h1>
-<p>Title: </p>
-<p>Content: </p>
-<p>Author: </p>
+<div class="post-details, boarder">
+  <p>
+    <%= @post.title %> by 
+    <%= @user.name %> 
+    <span>Comments: <%= @comments.count.zero? ? 0 : @comments.count %></span>
+    <span>Likes: <%= @likes.count.zero? ? 0 : @likes.count %></span>
+  </p>
+  <p class="text"><%= @post.text %></p>
+</div>
+
+<section class="comment-sec">
+  <p>Comments</p>
+    <% post_comments = @comments.where(post_id: @post.id) %>
+    <% post_comments.each do |comment| %>
+      <p><%= comment.user_id %> : <%= comment.text %></p>
+    <% end %>
+</section>
+
