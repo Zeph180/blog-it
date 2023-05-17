@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.boarder {
+  border: 2px solid black;
+  padding: 5px 5px;
+  margin-bottom: 20px;
+}
+
+.user-card {
+  background-color: pink;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.photo-cont {
+  height: 90px;
+  width: 90px;
+  background-color: red;
+}
+
+.usr-pic {
+  object-fit: cover;
+  height: 100%;
+}
+
+.details-cont {
+  width: 75%;
+  border: 2px solid black;
+  padding: 0 10px;
+  box-sizing: border-box;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.post-count {
+  float: right;
+  color: yellow;
+  width: fit-content;
+}
+
+.bio {
+  border: 2px solid black;
+  padding: 5px 10px;
+}
+
+.bio p {
+  margin-top: 10px;
+  color: red;
+}
+
+.post-card {
+  overflow: auto;
+}
+
+/* small {
+  background-color: red;
+  float: right;
+} */
+
+.com-likes {
+  text-align: right;
+}
