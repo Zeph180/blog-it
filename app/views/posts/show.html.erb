@@ -16,3 +16,21 @@
     <% end %>
 </section>
 
+ <% if @logged_in_user.likes.exists?(post: @post) %>
+    <%= link_to 'Unlike', unlike_post_path(@post), method: :delete %>
+  <% else %>
+    <%= link_to 'Like', post_like_path(@post), method: :post %>
+  <% end %>
+
+<%= form_with model: [@logged_in_user, @post.comments.build], url: post_comments_path(@post) do |form| %>
+  <div>
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+  
+  <div>
+    <%= form.submit 'Create Comment' %>
+  </div>
+<% end %>
+
+
