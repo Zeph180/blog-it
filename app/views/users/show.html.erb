@@ -1,3 +1,32 @@
-<h1>User details<h1>
-<p>Name:<p>
-<h1>Last 3 posts</h1>
+<div class="user-card">
+  <section class="photo-cont">
+    <img class="usr-pic" src="<%= @user.photo %>" alt="User Photo">
+  </section>
+  <section class="details-cont">
+    <h2><%= @user.name %></h2>
+
+    <p class="com-likes">Number of posts:<%= @posts.count%> </p>
+      <%# <% post_count = @posts.where(author_id: user.id).count %>
+      <%# <p class="post-count">Number of Posts: <%= post_count.zero? ? '0' : post_count %></p> 
+  </section>
+</div>
+
+  <div class="bio boarder">
+    <p>Bio</p>
+    <p><%= @user.bio %></p>
+  </div>
+
+<% @posts.each do |post| %>
+  <div class="post-card, boarder">
+    <p><a href="<%= user_posts_url(post) %>"><%= post.title %></a></p>
+    <p><%= post.text %></p>
+    <section class="com-likes">
+      <small>
+        <span>Comments: <%= @comments.count%>,</span>
+        <span>Likes: <%= @comments.count%></span>
+      </small>
+    </section>
+  </div>
+<% end %>
+  <button>See all posts</button>
+

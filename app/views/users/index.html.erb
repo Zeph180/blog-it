@@ -1,1 +1,14 @@
-<h1>List of users</h1>
+<% @users.each do |user| %>
+  <a href="<%= user_path(user) %>">
+  <div class="user-card">
+    <section class="photo-cont">
+      <img class="usr-pic" src="<%= user.photo %>" alt="User Photo">
+    </section>
+    <section class="details-cont">
+      <h2><%= user.name %></h2>
+    <% post_count = @posts.where(author_id: user.id).count %>
+      <p class="post-count">Number of Posts: <%= post_count.zero? ? '0' : post_count %></p>
+    </section>
+  </div>
+  </a>
+<% end %>
