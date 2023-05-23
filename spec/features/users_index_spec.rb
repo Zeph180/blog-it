@@ -5,8 +5,8 @@ RSpec.feature 'Users', type: :feature do
     # Create test data
     user1 = User.create(name: 'John Doe', photo: 'john.jpg')
     user2 = User.create(name: 'Jane Smith', photo: 'jane.jpg')
-    post1 = user1.posts.create(title: 'Post 1', text: 'Lorem ipsum')
-    post2 = user1.posts.create(title: 'Post 2', text: 'Dolor sit amet')
+    user1.posts.create(title: 'Post 1', text: 'Lorem ipsum')
+    user1.posts.create(title: 'Post 2', text: 'Dolor sit amet')
 
     # Visit the users page
     visit users_path

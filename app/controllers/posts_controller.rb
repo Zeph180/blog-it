@@ -23,5 +23,4 @@ class PostsController < ApplicationController
       redirect_to user_path(@user), alert: 'Failed to create post.'
     end
   end
-  
 end

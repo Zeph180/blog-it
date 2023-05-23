@@ -10,16 +10,11 @@ RSpec.feature 'User Profile', type: :feature do
     # Visit the user profile page
     visit user_path(user)
 
-    puts page.body
-
     # Verify user profile details
     expect(page).to have_css('.user-card')
     expect(page).to have_selector('.usr-pic[src="john.jpg"]')
     expect(page).to have_content('John Doe')
     expect(page).to have_content('Number of posts: 2')
-
-    puts post1.inspect
-    puts post2.inspect
 
     expect(page).to have_css('.bio.boarder')
     expect(page).to have_content('Bio')
