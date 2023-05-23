@@ -5,7 +5,7 @@
   <section class="details-cont">
     <h2><%= @user.name %></h2>
 
-    <p class="com-likes">Number of posts:<%= @posts.count%> </p>
+    <p class="com-likes">Number of posts: <%= @posts.count%> </p>
       <%# <% post_count = @posts.where(author_id: user.id).count %>
       <%# <p class="post-count">Number of Posts: <%= post_count.zero? ? '0' : post_count %></p> 
   </section>
@@ -34,7 +34,7 @@
 
 
 <% @posts.each do |post| %>
-  <div class="post-card, boarder">
+  <div class="post-card boarder">
     <p><a href="<%= user_posts_url(post) %>"><%= post.title %></a></p>
     <p><%= post.text %></p>
     <section class="com-likes">
