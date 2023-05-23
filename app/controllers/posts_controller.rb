@@ -13,4 +13,15 @@ class PostsController < ApplicationController
     @comments = Comment.where(post_id: params[:post_id])
     @likes = Like.where(post_id: params[:post_id])
   end
+
+  def create
+    @user = User.find(params[:user_id])
+    @post = @user.posts.new(post_params)
+    if @post.save
+      redirect_to user_path(@user), notice: 'Post created successfully.'
+    else
+      redirect_to user_path(@user), alert: 'Failed to create post.'
+    end
+  end
+  
 end
