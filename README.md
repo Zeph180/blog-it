@@ -111,6 +111,12 @@ To get the project running:
 - Twitter: [@twitterhandle](https://twitter.com/richardszeph)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/kigozijosephsuubi)
 
+👤 **Rudy Menekam**
+
+- GitHub: [@githubhandle](https://github.com/Rudy-Menekam)
+- Twitter: [@twitterhandle](https://twitter.com/MenekamR)
+- LinkedIn: [linkedIn](https://www.linkedin.com/in/menekam-rudy/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
