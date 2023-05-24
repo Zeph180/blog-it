@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :feature do
   before do
     @user = User.create(name: 'John Doe', id: 1)
-    @post = Post.create(id: 1, title: 'Test Post', text: 'This is a test post', author_id: @user.id, likes_count: 0, comments_count: 0)
+    @post = Post.create(id: 1, title: 'Test Post', text: 'This is a test post', author_id: @user.id, likes_count: 0,
+                        comments_count: 0)
   end
 
   describe 'Post show page' do
@@ -26,7 +27,7 @@ RSpec.describe 'Posts', type: :feature do
 
       expect(page).to have_selector('.comment-sec')
       expect(page).to have_content('Comments')
-      expect(page).to have_content("#{comment1.text}")
+      expect(page).to have_content(comment1.text.to_s)
       expect(page).to have_selector('p', text: "#{comment2.user_id} : #{comment2.text}")
     end
 
