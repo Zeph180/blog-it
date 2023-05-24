@@ -1,14 +1,14 @@
 class PostsController < ApplicationController
   def index
-    @user = User.includes(posts: [:comments, :likes]).find(params[:user_id])
-    @posts = Post.where(author_id: params[:user_id])
-    @comments = Comment.where(post_id: params[:post_id])
+    @user = User.includes(posts: %i[comments likes]).find(params[:user_id])
+    @posts = @user.posts
+    @comments = Comment.where(post_id: @posts.pluck(:id)).group_by(&:post_id)
 
     @posts.each do |post|
       @comments[post.id] = Comment.where(post_id: post.id)
     end
 
-    @likes = Like.where(post_id: params[:post_id])
+    @likes = Like.where(post_id: @posts.pluck(:id))
   end
 
   def show
