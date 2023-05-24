@@ -14,7 +14,7 @@
 </div>
 
 <% @posts.each do |post| %>
-  <div class="post-card, boarder">
+  <div class="post-card boarder">
     <h3><a href="<%= user_post_url(@user, post) %>"><%= post.title %></a></h3>
     <p><%= post.text %></p>
     <section class="com-likes">
@@ -24,9 +24,9 @@
       </small>
     </section>
   </div>
-  <section class="comments-sec">
-    <% @comments.each do |comment| %>
-      <p><%= comment.user_id %> : <%= comment.text %></p>
-    <% end %>
-  </section>
+    <section class="comments-sec">
+      <% @comments[post.id].each do |comment| %>
+        <p><%= comment.user_id %> : <%= comment.text %></p>
+      <% end %>
+    </section>
 <% end %>
