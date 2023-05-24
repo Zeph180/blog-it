@@ -1,16 +1,15 @@
 require 'rails_helper'
 
+# rubocop:disable Metrics/BlockLength
 RSpec.feature 'User Profile', type: :feature do
   scenario 'displays user profile details and posts' do
     # Create test data
     user = User.create(name: 'John Doe', photo: 'john.jpg', bio: 'Lorem ipsum')
-    post1 = Post.create(title: 'Post 1', text: 'Lorem ipsum dolor sit amet', id: 2, author_id: user.id)
-    post2 = Post.create(title: 'Post 2', text: 'Consectetur adipiscing elit', id: 3, author_id: user.id)
+    Post.create(title: 'Post 1', text: 'Lorem ipsum dolor sit amet', id: 2, author_id: user.id)
+    Post.create(title: 'Post 2', text: 'Consectetur adipiscing elit', id: 3, author_id: user.id)
 
-    # Visit the user profile page
     visit user_path(user)
 
-    # Verify user profile details
     expect(page).to have_css('.user-card')
     expect(page).to have_selector('.usr-pic[src="john.jpg"]')
     expect(page).to have_content('John Doe')
@@ -36,12 +35,10 @@ RSpec.feature 'User Profile', type: :feature do
       expect(page).to have_content('Likes: 0')
     end
 
-    # Verify the "See all posts" button
     expect(page).to have_button('See all posts')
   end
 
   scenario 'create new post' do
-    # Create a user for the logged in user
     user = User.create(name: 'John Doe', photo: 'john.jpg', bio: 'Lorem ipsum')
 
     # Visit the user profile page
@@ -52,3 +49,4 @@ RSpec.feature 'User Profile', type: :feature do
     fill_in 'Content', with: 'This is a new post'
   end
 end
+# rubocop:enable Metrics/BlockLength

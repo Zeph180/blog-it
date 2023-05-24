@@ -17,5 +17,4 @@ RSpec.describe 'PostShow', type: :feature do
     expect(page).to have_content('Likes: 0')
     expect(page).to have_content(@post.text)
   end
-
 end
