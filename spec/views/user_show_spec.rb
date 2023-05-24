@@ -5,10 +5,10 @@ RSpec.describe 'User Show', type: :feature do
     # You can set up any necessary data here for testing
     @user = User.create(id: 1, name: 'John Doe', photo: 'user_photo.jpg', bio: 'Sample bio')
     @posts = @user.posts.create([
-      { title: 'Post 1', text: 'Content 1' },
-      { title: 'Post 2', text: 'Content 2' },
-      { title: 'Post 3', text: 'Content 3' }
-    ])
+                                  { title: 'Post 1', text: 'Content 1' },
+                                  { title: 'Post 2', text: 'Content 2' },
+                                  { title: 'Post 3', text: 'Content 3' }
+                                ])
     @comments = @posts.map { |post| post.comments.create(text: 'Comment') }
   end
 
