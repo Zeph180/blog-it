@@ -17,7 +17,6 @@ RSpec.describe 'posts/show', type: :feature do
   end
 
   it 'displays the username and comment text for each comment' do
-    # Assuming you have comment records associated with the post
     comment1 = Comment.create(user_id: user.id, post_id: post.id, text: 'First comment', author_id: user.id)
     comment2 = Comment.create(user_id: user.id, post_id: post.id, text: 'Second comment', author_id: user.id)
 
@@ -28,18 +27,10 @@ RSpec.describe 'posts/show', type: :feature do
     expect(page).to have_content(comment2.text)
   end
 
-  # it 'allows liking and unliking the post' do
-  #   click_link 'Like'
-  #   expect(page).to have_link('Unlike')
+  it 'allows creating a comment' do
+    fill_in 'comment_content', with: 'This is a new comment'
+    click_button 'Create Comment'
 
-  #   click_link 'Unlike'
-  #   expect(page).to have_link('Like')
-  # end
-
-  # it 'allows creating a comment' do
-  #   fill_in 'comment_content', with: 'This is a new comment'
-  #   click_button 'Create Comment'
-
-  #   expect(page).to have_content('This is a new comment')
+    expect(page).to have_content('This is a new comment')
   # end
 end
