@@ -33,19 +33,4 @@ RSpec.describe "User Profile", type: :feature do
     expect(page).to have_content("Post 2")
     expect(page).to have_content("Consectetur adipiscing elit.")
   end
-
-  # it "displays the first comments on a post" do
-  #   expect(page).to have_content("Comment 1")
-  #   expect(page).to have_content("Comment 2")
-  # end
-
-  # it "displays the number of comments and likes a post has" do
-  #   expect(page).to have_content("Comments: 2")
-  #   expect(page).to have_content("Likes: 1")
-  # end
-
-  # it "redirects to a post's show page when clicked" do
-  #   click_link "Post 1"
-  #   expect(current_path).to eq(user_post_path(@user, @post1))
-  # end
 end

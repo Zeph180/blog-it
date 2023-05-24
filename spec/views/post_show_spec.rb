@@ -36,10 +36,10 @@ RSpec.describe 'posts/show', type: :feature do
   #   expect(page).to have_link('Like')
   # end
 
-  # it 'allows creating a comment' do
-  #   fill_in 'comment_content', with: 'This is a new comment'
-  #   click_button 'Create Comment'
+  it 'allows creating a comment' do
+    fill_in 'comment_content', with: 'This is a new comment'
+    click_button 'Create Comment'
 
-  #   expect(page).to have_content('This is a new comment')
+    expect(page).to have_content('This is a new comment')
   # end
 end
